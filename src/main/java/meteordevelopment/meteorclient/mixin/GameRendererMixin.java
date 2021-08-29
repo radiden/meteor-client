@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.mixin;
@@ -54,7 +54,7 @@ public abstract class GameRendererMixin {
     private void onRenderWorld(float tickDelta, long limitTime, MatrixStack matrices, CallbackInfo info, boolean bl, Camera camera, MatrixStack matrixStack, double d, Matrix4f matrix4f) {
         if (!Utils.canUpdate()) return;
 
-        client.getProfiler().push("meteor-client_render");
+        client.getProfiler().push("dog-client_render");
 
         if (renderer == null) renderer = new Renderer3D();
         Render3DEvent event = Render3DEvent.get(matrices, renderer, tickDelta, camera.getPos().x, camera.getPos().y, camera.getPos().z);

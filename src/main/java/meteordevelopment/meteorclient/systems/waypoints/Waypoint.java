@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.waypoints;
@@ -16,7 +16,7 @@ import net.minecraft.nbt.NbtCompound;
 import java.util.Map;
 
 public class Waypoint implements ISerializable<Waypoint> {
-    public String name = "Meteor on Crack!";
+    public String name = "Dog on Crack!";
     public String icon = "Square";
     public SettingColor color = new SettingColor(225, 25, 25);
 

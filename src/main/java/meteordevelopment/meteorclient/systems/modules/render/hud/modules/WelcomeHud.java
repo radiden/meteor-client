@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.render.hud.modules;
@@ -24,7 +24,7 @@ public class WelcomeHud extends DoubleTextHudElement {
     );
 
     public WelcomeHud(HUD hud) {
-        super(hud, "welcome", "Displays a welcome message.", "Welcome to Meteor Client, ");
+        super(hud, "welcome", "Displays a welcome message.", "Welcome to Dog Client, ");
         rightColor = color.get();
     }
 

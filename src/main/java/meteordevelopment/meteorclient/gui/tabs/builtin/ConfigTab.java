@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.gui.tabs.builtin;
@@ -112,7 +112,7 @@ public class ConfigTab extends Tab {
 
     public static final Setting<Boolean> titleScreenCredits = sgScreens.add(new BoolSetting.Builder()
             .name("title-screen-credits")
-            .description("Show Meteor credits on title screen")
+            .description("Show Dog credits on title screen")
             .defaultValue(true)
             .onChanged(aBool -> Config.get().titleScreenCredits = aBool)
             .onModuleActivated(boolSetting -> boolSetting.set(Config.get().titleScreenCredits))
@@ -121,7 +121,7 @@ public class ConfigTab extends Tab {
 
     public static final Setting<Boolean> titleScreenSplashes = sgScreens.add(new BoolSetting.Builder()
             .name("title-screen-splashes")
-            .description("Show Meteor splash texts on title screen")
+            .description("Show Dog splash texts on title screen")
             .defaultValue(true)
             .onChanged(aBool -> Config.get().titleScreenSplashes = aBool)
             .onModuleActivated(boolSetting -> boolSetting.set(Config.get().titleScreenSplashes))
@@ -140,7 +140,7 @@ public class ConfigTab extends Tab {
     public static final Setting<String> customWindowTitleText = sgScreens.add(new StringSetting.Builder()
             .name("window-title-text")
             .description("The text it displays in the window title.")
-            .defaultValue("Minecraft {mc_version} - Meteor Client {version}")
+            .defaultValue("Minecraft {mc_version} - Dog Client {version}")
             .onChanged(titleText -> Config.get().customWindowTitleText = titleText)
             .onModuleActivated(stringSetting -> stringSetting.set(Config.get().customWindowTitleText))
             .visible(customWindowTitle::get)
@@ -198,7 +198,7 @@ public class ConfigTab extends Tab {
                     new PromptBuilder(theme, this.parent)
                         .title("Potential prefix conflict")
                         .message("You have set your command prefix to '/', which is used by minecraft.")
-                        .message("This can cause conflict issues between meteor and minecraft commands.")
+                        .message("This can cause conflict issues between Dog and minecraft commands.")
                         .message("Do you want to reset your prefix to '.'?")
                         .onYes(() -> {
                             Config.get().prefix = ".";

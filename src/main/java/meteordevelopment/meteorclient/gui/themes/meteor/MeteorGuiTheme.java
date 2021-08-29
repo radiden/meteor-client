@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.gui.themes.meteor;
@@ -149,7 +149,7 @@ public class MeteorGuiTheme extends GuiTheme {
     public final Setting<SettingColor> sliderRight = color(sgSlider, "slider-right", "Color of slider right part.", new SettingColor(50, 50, 50));
 
     public MeteorGuiTheme() {
-        super("Meteor");
+        super("Dog");
 
         settingsFactory = new DefaultSettingsWidgetFactory(this);
     }

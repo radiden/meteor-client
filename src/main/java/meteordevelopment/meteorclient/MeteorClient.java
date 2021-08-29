@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient;
@@ -56,7 +56,7 @@ import static meteordevelopment.meteorclient.utils.Utils.mc;
 public class MeteorClient implements ClientModInitializer {
     public static MeteorClient INSTANCE;
     public static final IEventBus EVENT_BUS = new EventBus();
-    public static final File FOLDER = new File(FabricLoader.getInstance().getGameDir().toString(), "meteor-client");
+    public static final File FOLDER = new File(FabricLoader.getInstance().getGameDir().toString(), "dog-client");
     public static final Logger LOG = LogManager.getLogger();
 
     public static Screen screenToOpen;
@@ -68,13 +68,13 @@ public class MeteorClient implements ClientModInitializer {
             return;
         }
 
-        LOG.info("Initializing Meteor Client");
+        LOG.info("Initializing Dog Client");
 
         Utils.mc = MinecraftClient.getInstance();
         EVENT_BUS.registerLambdaFactory("meteordevelopment.meteorclient", (lookupInMethod, klass) -> (MethodHandles.Lookup) lookupInMethod.invoke(null, klass, MethodHandles.lookup()));
 
         List<MeteorAddon> addons = new ArrayList<>();
-        for (EntrypointContainer<MeteorAddon> entrypoint : FabricLoader.getInstance().getEntrypointContainers("meteor", MeteorAddon.class)) {
+        for (EntrypointContainer<MeteorAddon> entrypoint : FabricLoader.getInstance().getEntrypointContainers("Dog", MeteorAddon.class)) {
             addons.add(entrypoint.getEntrypoint());
         }
 

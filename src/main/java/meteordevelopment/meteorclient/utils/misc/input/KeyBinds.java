@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.utils.misc.input;
@@ -13,7 +13,7 @@ import org.lwjgl.glfw.GLFW;
 import java.util.Map;
 
 public class KeyBinds {
-    private static final String CATEGORY = "Meteor Client";
+    private static final String CATEGORY = "Dog Client";
 
     public static KeyBinding OPEN_CLICK_GUI = new KeyBinding("key.meteor-client.open-click-gui", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_RIGHT_SHIFT, CATEGORY);
 

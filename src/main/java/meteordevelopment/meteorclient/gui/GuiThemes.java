@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.gui;
@@ -39,7 +39,7 @@ public class GuiThemes {
             }
         }
 
-        if (theme == null) select("Meteor");
+        if (theme == null) select("Dog");
     }
 
     public static void add(GuiTheme theme) {

@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.misc;
@@ -191,7 +191,7 @@ public class BetterChat extends Module {
     private final Setting<String> suffixText = sgSuffix.add(new StringSetting.Builder()
             .name("text")
             .description("The text to add as your suffix.")
-            .defaultValue(" | meteor on crack!")
+            .defaultValue(" | Dog on crack!")
             .visible(() -> !suffixRandom.get())
             .build()
     );

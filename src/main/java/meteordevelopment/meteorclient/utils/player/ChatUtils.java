@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.utils.player;
@@ -112,14 +112,14 @@ public class ChatUtils {
         BetterChat betterChat = Modules.get().get(BetterChat.class);
 
         if (betterChat.isActive() && betterChat.rainbowPrefix.get()) {
-            meteor.append(new LiteralText("M").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
-            meteor.append(new LiteralText("e").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
-            meteor.append(new LiteralText("t").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
-            meteor.append(new LiteralText("e").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
+            meteor.append(new LiteralText("D").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
             meteor.append(new LiteralText("o").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
-            meteor.append(new LiteralText("r").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
+            meteor.append(new LiteralText("g").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
+            // meteor.append(new LiteralText("e").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
+            // meteor.append(new LiteralText("o").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
+            // meteor.append(new LiteralText("r").setStyle(meteor.getStyle().withColor(new TextColor(RAINBOW.getNext().getPacked()))));
         } else {
-            meteor = new LiteralText("Meteor");
+            meteor = new LiteralText("Dog");
             meteor.setStyle(meteor.getStyle().withFormatting(Formatting.BLUE));
         }
 

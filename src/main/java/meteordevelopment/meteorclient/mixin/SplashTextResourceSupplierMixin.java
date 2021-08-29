@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.mixin;
@@ -33,8 +33,8 @@ public class SplashTextResourceSupplierMixin {
 
     private static List<String> getMeteorSplashes() {
         return Arrays.asList(
-                "Meteor on Crack!",
-                "Star Meteor Client on GitHub!",
+                "Dog on Crack!",
+                "Star Dog Client on GitHub!",
                 "Based utility mod.",
                 "§6MineGame159 §fbased god",
                 "§4meteorclient.com",

@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.gui.renderer;
@@ -63,10 +63,10 @@ public class GuiRenderer {
     }
 
     public static void init() {
-        CIRCLE = addTexture(new Identifier("meteor-client", "textures/icons/gui/circle.png"));
-        TRIANGLE = addTexture(new Identifier("meteor-client", "textures/icons/gui/triangle.png"));
-        EDIT = addTexture(new Identifier("meteor-client", "textures/icons/gui/edit.png"));
-        RESET = addTexture(new Identifier("meteor-client", "textures/icons/gui/reset.png"));
+        CIRCLE = addTexture(new Identifier("dog-client", "textures/icons/gui/circle.png"));
+        TRIANGLE = addTexture(new Identifier("dog-client", "textures/icons/gui/triangle.png"));
+        EDIT = addTexture(new Identifier("dog-client", "textures/icons/gui/edit.png"));
+        RESET = addTexture(new Identifier("dog-client", "textures/icons/gui/reset.png"));
 
         TEXTURE = TEXTURE_PACKER.pack();
     }

@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.mixin;
@@ -55,7 +55,7 @@ public class TitleScreenMixin extends Screen {
     @Inject(method = "init", at = @At("TAIL"))
     private void onInit(CallbackInfo info) {
 
-        text1 = "Meteor Client by ";
+        text1 = "Dog Client by ";
         text2 = "MineGame159";
         text3 = ", ";
         text4 = "squidoodly";
@@ -77,7 +77,7 @@ public class TitleScreenMixin extends Screen {
     private void onRenderIdkDude(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo info) {
         if (Utils.firstTimeTitleScreen) {
             Utils.firstTimeTitleScreen = false;
-            MeteorClient.LOG.info("Checking latest version of Meteor Client");
+            MeteorClient.LOG.info("Checking latest version of Dog Client");
 
             MeteorExecutor.execute(() -> {
                 String res = Http.get("https://meteorclient.com/api/version").sendString();
@@ -88,7 +88,7 @@ public class TitleScreenMixin extends Screen {
                 if (latestVer.isHigherThan(Config.get().version)) {
                     new PromptBuilder()
                         .title("New Update")
-                        .message("A new version of Meteor has been released.")
+                        .message("A new version of Dog has been released.")
                         .message("Your version: %s", Config.get().version)
                         .message("Latest version: %s", latestVer)
                         .message("Do you want to update?")

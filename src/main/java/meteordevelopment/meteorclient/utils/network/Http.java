@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.utils.network;
@@ -33,7 +33,7 @@ public class Http {
 
         public Request(Method method, String url) {
             try {
-                this.builder = HttpRequest.newBuilder().uri(new URI(url)).header("User-Agent", "Meteor Client");
+                this.builder = HttpRequest.newBuilder().uri(new URI(url)).header("User-Agent", "Dog Client");
                 this.method = method;
             } catch (URISyntaxException e) {
                 e.printStackTrace();

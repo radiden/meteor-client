@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.render;
@@ -61,8 +61,8 @@ public class Blur extends Module {
     // Screens
 
     private final Setting<Boolean> meteor = sgScreens.add(new BoolSetting.Builder()
-        .name("meteor")
-        .description("Applies blur to Meteor screens.")
+        .name("Dog")
+        .description("Applies blur to Dog screens.")
         .defaultValue(true)
         .build()
     );

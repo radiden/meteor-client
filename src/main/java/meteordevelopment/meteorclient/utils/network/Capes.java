@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.utils.network;
@@ -111,7 +111,7 @@ public class Capes {
         private int retryTimer;
 
         public Cape(String name) {
-            super("meteor-client", "capes/" + COUNT++);
+            super("dog-client", "capes/" + COUNT++);
 
             this.name = name;
         }

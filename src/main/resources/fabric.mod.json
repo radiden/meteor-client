@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
-  "name": "Meteor Client",
-  "id": "meteor-client",
+  "name": "Dog Client",
+  "id": "dog-client",
   "version": "${version}",
-  "description": "Based utility mod.",
+  "description": "Even more based utility mod.",
   "authors": [
     "MineGame159",
     "squidoodly",
-    "seasnail"
+    "seasnail",
+    "sex"
   ],
   "contact": {
     "homepage": "https://meteorclient.com",
@@ -32,7 +33,7 @@
   ],
   "accessWidener": "meteor-client.accesswidener",
   "custom": {
-    "meteor-client:devbuild": "@devbuild@"
+    "dog-client:devbuild": "@devbuild@"
   },
   "depends": {
     "java": ">=16",

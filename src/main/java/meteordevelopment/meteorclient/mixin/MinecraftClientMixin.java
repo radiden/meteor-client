@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.mixin;
@@ -66,7 +66,7 @@ public abstract class MinecraftClientMixin implements IMinecraftClient {
         OnlinePlayers.update();
         doItemUseCalled = false;
 
-        getProfiler().push("meteor-client_pre_update");
+        getProfiler().push("dog-client_pre_update");
         MeteorClient.EVENT_BUS.post(TickEvent.Pre.get());
         getProfiler().pop();
 
@@ -76,7 +76,7 @@ public abstract class MinecraftClientMixin implements IMinecraftClient {
 
     @Inject(at = @At("TAIL"), method = "tick")
     private void onTick(CallbackInfo info) {
-        getProfiler().push("meteor-client_post_update");
+        getProfiler().push("dog-client_post_update");
         MeteorClient.EVENT_BUS.post(TickEvent.Post.get());
         getProfiler().pop();
     }

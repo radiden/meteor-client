@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.render.hud.modules;
@@ -20,7 +20,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
 public class ContainerViewerHud extends HudElement {
-    private static final Identifier TEXTURE = new Identifier("meteor-client", "textures/container.png");
+    private static final Identifier TEXTURE = new Identifier("dog-client", "textures/container.png");
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 

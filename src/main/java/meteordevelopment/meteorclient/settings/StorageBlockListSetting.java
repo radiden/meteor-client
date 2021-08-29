@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.settings;
@@ -135,7 +135,7 @@ public class StorageBlockListSetting extends Setting<List<BlockEntityType<?>>> {
 
     private static class SRegistry extends Registry<BlockEntityType<?>> {
         public SRegistry() {
-            super(RegistryKey.ofRegistry(new Identifier("meteor-client", "storage-blocks")), Lifecycle.stable());
+            super(RegistryKey.ofRegistry(new Identifier("dog-client", "storage-blocks")), Lifecycle.stable());
         }
 
         @Nullable

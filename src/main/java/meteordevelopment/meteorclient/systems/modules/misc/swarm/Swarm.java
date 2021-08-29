@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.misc.swarm;
@@ -58,7 +58,7 @@ public class Swarm extends Module {
     public SwarmWorker worker;
 
     public Swarm() {
-        super(Categories.Misc, "Swarm", "Allows you to control multiple instances of Meteor from one central host.");
+        super(Categories.Misc, "Swarm", "Allows you to control multiple instances of Dog from one central host.");
     }
 
     @Override

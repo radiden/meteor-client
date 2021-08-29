@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules;
@@ -545,7 +545,7 @@ public class Modules extends System<Modules> {
 
     public static class ModuleRegistry extends Registry<Module> {
         public ModuleRegistry() {
-            super(RegistryKey.ofRegistry(new Identifier("meteor-client", "modules")), Lifecycle.stable());
+            super(RegistryKey.ofRegistry(new Identifier("dog-client", "modules")), Lifecycle.stable());
         }
 
         @Override
