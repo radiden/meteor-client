@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.mixin;
@@ -37,7 +37,7 @@ public abstract class BlockMixin extends AbstractBlock implements ItemConvertibl
 
     @Inject(method = "getSlipperiness", at = @At("RETURN"), cancellable = true)
     public void getSlipperiness(CallbackInfoReturnable<Float> info) {
-        // For some retarded reason Tweakeroo calls this method before meteor is initialized
+        // For some retarded reason Tweakeroo calls this method before Dog is initialized
         if (Modules.get() == null) return;
 
         Slippy slippy = Modules.get().get(Slippy.class);

@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.movement;
@@ -286,7 +286,7 @@ public class AntiAFK extends Module {
             NbtList messagesTag = tag.getList("messages", 8);
             for (NbtElement messageTag : messagesTag) messages.add(messageTag.asString());
         } else {
-            messages.add("This is an AntiAFK message. Meteor on Crack!");
+            messages.add("This is an AntiAFK message. Dog on Crack!");
         }
 
         return super.fromTag(tag);

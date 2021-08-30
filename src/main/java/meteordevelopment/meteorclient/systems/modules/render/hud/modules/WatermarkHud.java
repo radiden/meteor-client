@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.render.hud.modules;
@@ -10,7 +10,7 @@ import meteordevelopment.meteorclient.systems.modules.render.hud.HUD;
 
 public class WatermarkHud extends DoubleTextHudElement {
     public WatermarkHud(HUD hud) {
-        super(hud, "watermark", "Displays a Meteor Client watermark.", "Meteor Client ");
+        super(hud, "watermark", "Displays a Dog Client watermark.", "Dog Client ");
     }
 
     @Override

@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems;
@@ -33,7 +33,7 @@ public abstract class System<T> implements ISerializable<T> {
         if (tag == null) return;
 
         try {
-            File tempFile = File.createTempFile("meteor-client", file.getName());
+            File tempFile = File.createTempFile("dog-client", file.getName());
             NbtIo.write(tag, tempFile);
 
             if (folder != null) file = new File(folder, file.getName());

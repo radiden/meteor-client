@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.misc;
@@ -71,7 +71,7 @@ public class DiscordPresence extends Module {
     private final Setting<List<String>> line2Strings = sgLine2.add(new StringListSetting.Builder()
         .name("line-2-messages")
         .description("Messages used for the second line.")
-        .defaultValue(List.of("Meteor on Crack!", "{round({server.tps}, 1)} TPS", "Playing on {server.difficulty} difficulty.", "{server.player_count} Players online"))
+        .defaultValue(List.of("Dog on Crack!", "{round({server.tps}, 1)} TPS", "Playing on {server.difficulty} difficulty.", "{server.player_count} Players online"))
         .onChanged(strings -> recompileLine2())
         .build()
     );
@@ -105,18 +105,18 @@ public class DiscordPresence extends Module {
     private int line2Ticks, line2I;
 
     public DiscordPresence() {
-        super(Categories.Misc, "discord-presence", "Displays Meteor as your presence on Discord.");
+        super(Categories.Misc, "discord-presence", "Displays Dog as your presence on Discord.");
     }
 
     @Override
     public void onActivate() {
         DiscordEventHandlers handlers = new DiscordEventHandlers();
-        instance.Discord_Initialize("835240968533049424", handlers, true, null);
+        instance.Discord_Initialize("881572411026317312", handlers, true, null);
 
         rpc.startTimestamp = System.currentTimeMillis() / 1000L;
 
-        rpc.largeImageKey = "meteor_client";
-        String largeText = "Meteor Client " + Config.get().version;
+        rpc.largeImageKey = "dog_client";
+        String largeText = "Dog Client " + Config.get().version;
         if (!Config.get().devBuild.isEmpty()) largeText += " Dev Build: " + Config.get().devBuild;
         rpc.largeImageText = largeText;
 
@@ -240,8 +240,8 @@ public class DiscordPresence extends Module {
     }
 
     private enum SmallImage {
-        MineGame("minegame", "MineGame159"),
-        Snail("seasnail", "seasnail8169");
+        MineGame("dog1", "meteor"),
+        Snail("dog2", "sucks");
 
         private final String key, text;
 

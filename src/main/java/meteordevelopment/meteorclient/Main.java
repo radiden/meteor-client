@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient;
@@ -22,8 +22,8 @@ public class Main {
 
         int option = JOptionPane.showOptionDialog(
                 null,
-                "To install Meteor Client you need to put it in your mods folder and run Fabric for latest Minecraft version.",
-                "Meteor Client",
+                "To install Dog Client you need to put it in your mods folder and run Fabric for latest Minecraft version.",
+                "Dog Client",
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.ERROR_MESSAGE,
                 null,

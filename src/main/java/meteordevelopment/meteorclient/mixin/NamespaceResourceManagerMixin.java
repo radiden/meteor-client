@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.mixin;
@@ -20,8 +20,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class NamespaceResourceManagerMixin {
     @Inject(method = "getResource", at = @At("HEAD"), cancellable = true)
     private void onGetResource(Identifier id, CallbackInfoReturnable<Resource> info) {
-        if (id.getNamespace().equals("meteor-client")) {
-            info.setReturnValue(new ResourceImpl("meteor-client", id, MeteorClient.class.getResourceAsStream("/assets/meteor-client/" + id.getPath()), null));
+        if (id.getNamespace().equals("dog-client")) {
+            info.setReturnValue(new ResourceImpl("dog-client", id, MeteorClient.class.getResourceAsStream("/assets/meteor-client/" + id.getPath()), null));
         }
     }
 }

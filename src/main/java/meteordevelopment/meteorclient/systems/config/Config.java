@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.config;
@@ -46,13 +46,13 @@ public class Config extends System<Config> {
     public Config() {
         super("config");
 
-        ModMetadata metadata = FabricLoader.getInstance().getModContainer("meteor-client").get().getMetadata();
+        ModMetadata metadata = FabricLoader.getInstance().getModContainer("dog-client").get().getMetadata();
 
         String versionString = metadata.getVersion().getFriendlyString();
         if (versionString.contains("-")) versionString = versionString.split("-")[0];
 
         version = new Version(versionString);
-        devBuild = metadata.getCustomValue("meteor-client:devbuild").getAsString();
+        devBuild = metadata.getCustomValue("dog-client:devbuild").getAsString();
     }
 
     public static Config get() {

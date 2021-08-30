@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.utils;
@@ -148,7 +148,7 @@ public class Utils {
         }
 
         if (!contains) {
-            servers.add(new ServerInfo("Meteor Pvp", "pvp.meteorclient.com", false));
+            servers.add(new ServerInfo("Dog Pvp", "pvp.meteorclient.com", false));
             servers.saveFile();
         }
     }

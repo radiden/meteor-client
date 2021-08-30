@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.modules.render;
@@ -185,7 +185,7 @@ public class Chams extends Module {
             .build()
     );
 
-    public static final Identifier BLANK = new Identifier("meteor-client", "textures/blank.png");
+    public static final Identifier BLANK = new Identifier("dog-client", "textures/blank.png");
 
     public Chams() {
         super(Categories.Render, "chams", "Tweaks rendering of entities.");

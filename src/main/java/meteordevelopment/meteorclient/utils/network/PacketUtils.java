@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.utils.network;
@@ -372,7 +372,7 @@ public class PacketUtils {
 
     private static class PacketRegistry extends Registry<Class<? extends Packet<?>>> {
         public PacketRegistry() {
-            super(RegistryKey.ofRegistry(new Identifier("meteor-client", "packets")), Lifecycle.stable());
+            super(RegistryKey.ofRegistry(new Identifier("dog-client", "packets")), Lifecycle.stable());
         }
 
         @Override

@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2021 Meteor Development.
+ * This file is part of the Dog Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * Copyright (c) 2021 Dog Development.
  */
 
 package meteordevelopment.meteorclient.systems.accounts;
@@ -35,7 +35,7 @@ public class AccountCache implements ISerializable<AccountCache> {
             int[] pixel = new int[4];
 
             if (skinUrl.equals("steve"))
-                skin = ImageIO.read(mc.getResourceManager().getResource(new Identifier("meteor-client", "textures/steve.png")).getInputStream());
+                skin = ImageIO.read(mc.getResourceManager().getResource(new Identifier("dog-client", "textures/steve.png")).getInputStream());
             else skin = ImageIO.read(new URL(skinUrl));
 
             // Whole picture

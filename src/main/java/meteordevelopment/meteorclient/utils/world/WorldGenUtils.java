@@ -325,6 +325,7 @@ public class WorldGenUtils {
         if (!stack.hasNbt()) return false;
         if (!stack.getNbt().contains("display")) return false;
         NbtCompound displayTag = stack.getNbt().getCompound("display");
+
         if (!displayTag.contains("Name")) return false;
         String nameTag = displayTag.getString("Name");
         if (!nameTag.contains("translate")) return false;
