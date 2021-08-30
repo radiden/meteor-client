@@ -7,16 +7,12 @@ package meteordevelopment.meteorclient.systems.commands.commands;
 
 import baritone.api.BaritoneAPI;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.events.packets.PacketEvent;
 import meteordevelopment.meteorclient.systems.commands.Command;
-import meteordevelopment.meteorclient.systems.commands.arguments.EnumArgumentType;
-import meteordevelopment.meteorclient.utils.Utils;
 import meteordevelopment.meteorclient.utils.player.ChatUtils;
 import meteordevelopment.meteorclient.utils.player.FindItemResult;
 import meteordevelopment.meteorclient.utils.player.InvUtils;
-import meteordevelopment.meteorclient.utils.world.WorldGenUtils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -41,20 +37,26 @@ import static com.mojang.brigadier.Command.SINGLE_SUCCESS;
 
 public class LocateCommand extends Command {
 
-    private final static DynamicCommandExceptionType NOT_FOUND = new DynamicCommandExceptionType(o -> {
-       if (o instanceof WorldGenUtils.Feature) {
-           return new LiteralText(String.format(
-               "%s not found.",
-               Utils.nameToTitle(o.toString().replaceAll("_", "-")))
-           );
-       }
-       return new LiteralText("Not found.");
-    });
-
     private Vec3d firstStart;
     private Vec3d firstEnd;
     private Vec3d secondStart;
     private Vec3d secondEnd;
+
+    private final List<Block> netherFortressBlocks = Arrays.asList(
+            Blocks.NETHER_BRICKS,
+            Blocks.NETHER_BRICK_FENCE,
+            Blocks.NETHER_WART
+    );
+
+    private final List<Block> monumentBlocks = Arrays.asList(
+            Blocks.PRISMARINE_BRICKS,
+            Blocks.SEA_LANTERN,
+            Blocks.DARK_PRISMARINE
+    );
+
+    private  final List<Block> strongholdBlocks = Arrays.asList(
+            Blocks.END_PORTAL_FRAME
+    );
 
     public LocateCommand() {
         super("locate", "Locates structures", "loc");
@@ -114,17 +116,6 @@ public class LocateCommand extends Command {
             return SINGLE_SUCCESS;
         }));
 
-<<<<<<< HEAD
-        builder.then(argument("feature", EnumArgumentType.enumArgument(WorldGenUtils.Feature.stronghold)).executes(ctx -> {
-            WorldGenUtils.Feature feature = EnumArgumentType.getEnum(ctx, "feature", WorldGenUtils.Feature.stronghold);
-            BlockPos pos = WorldGenUtils.locateFeature(feature, mc.player.getBlockPos());
-            if (pos != null) {
-                BaseText text = new LiteralText(String.format(
-                    "%s located at ",
-                    Utils.nameToTitle(feature.toString().replaceAll("_", "-"))
-                ));
-                Vec3d coords = new Vec3d(pos.getX(), pos.getY(), pos.getZ());
-=======
         builder.then(literal("mansion").executes(s -> {
             ItemStack stack = mc.player.getInventory().getMainHandStack();
             if (stack.getItem() != Items.FILLED_MAP) {
@@ -170,24 +161,19 @@ public class LocateCommand extends Command {
                     return SINGLE_SUCCESS;
                 }
                 BaseText text = new LiteralText("Stronghold located at ");
->>>>>>> 2ad92c30990fe37e88193784c36c46fa234571e0
                 text.append(ChatUtils.formatCoords(coords));
                 text.append(".");
                 info(text);
+            }
+            return SINGLE_SUCCESS;
+        }));
+
+        builder.then(literal("nether_fortress").executes(s -> {
+            Vec3d coords = findByBlockList(netherFortressBlocks);
+            if (coords == null ) {
+                error("No nether fortress found.");
                 return SINGLE_SUCCESS;
             }
-<<<<<<< HEAD
-            if (feature == WorldGenUtils.Feature.stronghold) {
-                FindItemResult eye = InvUtils.findInHotbar(Items.ENDER_EYE);
-                if (eye.found()) {
-                    BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("follow entity minecraft:eye_of_ender");
-                    firstStart = null;
-                    firstEnd = null;
-                    secondStart = null;
-                    secondEnd = null;
-                    MeteorClient.EVENT_BUS.subscribe(this);
-                    info("Please throw the first Eye of Ender.");
-=======
             BaseText text = new LiteralText("Fortress located at ");
             text.append(ChatUtils.formatCoords(coords));
             text.append(".");
@@ -210,10 +196,18 @@ public class LocateCommand extends Command {
                         info(text);
                         return SINGLE_SUCCESS;
                     }
->>>>>>> 2ad92c30990fe37e88193784c36c46fa234571e0
                 }
             }
-            throw NOT_FOUND.create(feature);
+            Vec3d coords = findByBlockList(monumentBlocks);
+            if (coords == null ) {
+                error("No monument found. You can try using a (highlight)Ocean explorer map(default) for more success.");
+                return SINGLE_SUCCESS;
+            }
+            BaseText text = new LiteralText("Monument located at ");
+            text.append(ChatUtils.formatCoords(coords));
+            text.append(".");
+            info(text);
+            return SINGLE_SUCCESS;
         }));
 
         builder.then(literal("cancel").executes(s -> {
@@ -223,8 +217,20 @@ public class LocateCommand extends Command {
     }
 
     private void cancel() {
-        warning("Locate canceled.");
+        warning("Locate canceled");
         MeteorClient.EVENT_BUS.unsubscribe(this);
+    }
+
+    private Vec3d findByBlockList(List<Block> blockList) {
+        List<BlockPos> posList = BaritoneAPI.getProvider().getWorldScanner().scanChunkRadius(BaritoneAPI.getProvider().getPrimaryBaritone().getPlayerContext(),
+                blockList,64,10,32);
+        if (posList.isEmpty()) {
+            return null;
+        }
+        if (posList.size() < 3) {
+            warning("Only %d block(s) found. This search might be a false positive.", posList.size());
+        }
+        return new Vec3d(posList.get(0).getX(),posList.get(0).getY(),posList.get(0).getZ());
     }
 
     @EventHandler
@@ -276,7 +282,7 @@ public class LocateCommand extends Command {
         final double[] end = new double[]{this.firstStart.x, this.firstStart.z, this.firstEnd.x, this.firstEnd.z};
         final double[] intersection = calcIntersection(start, end);
         if (Double.isNaN(intersection[0]) || Double.isNaN(intersection[1]) || Double.isInfinite(intersection[0]) || Double.isInfinite(intersection[1])) {
-            error("Lines are parallel.");
+            error("Lines are parallel");
             cancel();
             return;
         }
