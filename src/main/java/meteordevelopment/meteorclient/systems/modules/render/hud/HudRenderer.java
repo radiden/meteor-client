@@ -5,6 +5,7 @@
 
 package meteordevelopment.meteorclient.systems.modules.render.hud;
 
+import meteordevelopment.meteorclient.gui.GuiThemes;
 import meteordevelopment.meteorclient.renderer.text.TextRenderer;
 import meteordevelopment.meteorclient.utils.render.color.Color;
 
@@ -45,5 +46,9 @@ public class HudRenderer {
 
     public void addPostTask(Runnable runnable) {
         postTasks.add(runnable);
+    }
+
+    public int roundAmount() {
+        return GuiThemes.get().roundAmount();
     }
 }

@@ -82,6 +82,17 @@ public class MeteorGuiTheme extends GuiTheme {
             .build()
     );
 
+    public final Setting<Integer> round = sgGeneral.add(new IntSetting.Builder()
+            .name("round")
+            .description("How much windows should be rounded")
+            .defaultValue(0)
+            .min(0)
+            .max(20)
+            .sliderMin(0)
+            .sliderMax(15)
+            .build()
+    );
+
     // Colors
 
     public final Setting<SettingColor> accentColor = color("accent", "Main color of the GUI.", new SettingColor(135, 0, 255));
@@ -295,6 +306,11 @@ public class MeteorGuiTheme extends GuiTheme {
     @Override
     public boolean hideHUD() {
         return hideHUD.get();
+    }
+
+    @Override
+    public int roundAmount() {
+        return round.get();
     }
 
     public class ThreeStateColorSetting {

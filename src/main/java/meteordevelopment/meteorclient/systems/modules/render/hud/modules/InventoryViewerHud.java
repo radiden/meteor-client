@@ -5,6 +5,7 @@
 
 package meteordevelopment.meteorclient.systems.modules.render.hud.modules;
 
+import meteordevelopment.meteorclient.gui.GuiThemes;
 import meteordevelopment.meteorclient.renderer.GL;
 import meteordevelopment.meteorclient.renderer.Renderer2D;
 import meteordevelopment.meteorclient.settings.*;
@@ -104,7 +105,7 @@ public class InventoryViewerHud extends HudElement {
             }
             case Flat -> {
                 Renderer2D.COLOR.begin();
-                Renderer2D.COLOR.quad(x, y, w, h, color.get());
+                Renderer2D.COLOR.quadRounded(x, y, w, h, color.get(), GuiThemes.get().roundAmount(), true);
                 Renderer2D.COLOR.render(null);
             }
         }
