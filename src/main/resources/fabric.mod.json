@@ -17,7 +17,7 @@
     "discord": "https://meteorclient.com/discord"
   },
   "license": "GPL-3.0",
-  "icon": "assets/meteor-client/icon.png",
+  "icon": "assets/dog-client/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
